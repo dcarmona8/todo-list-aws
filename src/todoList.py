@@ -17,7 +17,7 @@ def get_table(dynamodb=None):
                                                endpoint_url=URL)
         else:
             print('No definida URL dynamoDB')
-            endpoint_url="http://dynamodb:8000"
+            endpoint_url = "http://dynamodb:8000"
             boto3.client = functools.partial(boto3.client,
                                              endpoint_url)
             boto3.resource = functools.partial(boto3.resource,
