@@ -56,20 +56,20 @@ class TestDatabaseFunctions(unittest.TestCase):
         self.assertIn(tableName, self.table.name)
         # self.assertIn('todoTable', self.table_local.name)
         print ('End: test_table_exists')
-        
-    def test_table_does_not_exist(self):
-        print ('---------------------')
-        print ('Start: test_table_does_not_exist')
-        # self.assertTrue(self.table)  # check if we got a result
-        # self.assertTrue(self.table_local)  # check if we got a result
 
-        print('Table name: None')
-        tableName = None;
-        # check if the table name is 'ToDo'
-        self.assertIn(tableName, None)
-        # self.assertIn('todoTable', self.table_local.name)
-        print ('End: test_table_exists')
-        
+    def test_tabla_no_existe(self):
+        print ('---------------------')
+        print ('Start: test_tabla_no_existe')
+        # Testing file functions
+        from src.todoList import get_table
+        # Table local
+        response = get_table(self.text, None)
+        print ('Response put_item:' + str(response))
+        self.assertEqual(200, response['statusCode'])
+        # Table mock descomento dos lineas
+        # self.assertEqual(200, put_item(self.text, self.dynamodb)[
+        #                  'ResponseMetadata']['HTTPStatusCode'])
+        print ('End: test_tabla_no_existe')
 
     def test_put_todo(self):
         print ('---------------------')
