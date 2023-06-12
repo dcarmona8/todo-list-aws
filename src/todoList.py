@@ -25,6 +25,14 @@ def get_table(dynamodb=None):
         print('------------------------')
         print('------------------------')
         print('------------------------')
+        print('------------------------')
+        print('------------------------')
+        print('------------------------')
+        print('------------------------')
+        print('------------------------')
+        print('------------------------')
+        print('------------------------')
+        print('------------------------')
     # fetch todo from the database
     table = dynamodb.Table(os.environ['DYNAMODB_TABLE'])
     return table
